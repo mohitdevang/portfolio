@@ -38,21 +38,46 @@
 
 <body class="portfolio-details-page">
 
-  <header id="header" class="header d-flex flex-column justify-content-center">
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
 
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
-      </ul>
-    </nav>
-
+  <!-- Top Navigation Bar -->
+  <header id="header" class="top-header">
+    <div class="container">
+      <div class="header-content">
+        <!-- Logo with Name (Left) -->
+        <div class="header-logo">
+          <a href="index.html" class="logo-link">
+            <span class="logo-text">MOHIT DEVANG</span>
+          </a>
+        </div>
+        
+        <!-- Profile Picture and Navigation -->
+        <div class="header-right">
+          <!-- Profile Picture -->
+          <div class="header-profile">
+            <img src="assets/img/my-profile.jpg" alt="Mohit Devang" class="header-profile-img">
+          </div>
+          
+          <!-- Navigation Menu -->
+          <nav id="navmenu" class="top-navmenu">
+            <ul>
+              <li><a href="index.html#hero">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#skills">Skills</a></li>
+              <li><a href="index.html#contact" class="nav-btn">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        
+        <!-- Logo with Name (Right - Duplicate) -->
+        <div class="header-logo header-logo-right">
+          <a href="index.html" class="logo-link">
+            <span class="logo-text">MOHIT DEVANG</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main class="main">
@@ -207,6 +232,9 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
+
+  <!-- Particles.js for animated background -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

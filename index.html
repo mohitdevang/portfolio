@@ -29,7 +29,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +37,11 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -68,99 +73,282 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex flex-column justify-content-center">
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
 
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+  <!-- Animated Loader -->
+  <div id="animated-loader" class="animated-loader">
+    <div class="loader-content">
+      <div class="constellation-loader">
+        <canvas id="loader-canvas"></canvas>
+      </div>
+      <div class="loader-text">
+        <h2>MOHIT DEVANG</h2>
+        <p>Loading Portfolio...</p>
+      </div>
+    </div>
+  </div>
 
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
-        <!-- <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li> -->
-      </ul>
-    </nav>
-
+  <!-- Top Navigation Bar -->
+  <header id="header" class="top-header">
+    <div class="container">
+      <div class="header-content">
+        <!-- Single Contact Button -->
+        <button class="btn-contact-hire" onclick="openContactPopup()">
+          Contact / Get Hire Me
+        </button>
+      </div>
+    </div>
   </header>
+
+  <!-- Contact Popup Modal -->
+  <div id="contactPopup" class="contact-popup">
+    <div class="contact-popup-content">
+      <span class="close-popup" onclick="closeContactPopup()">&times;</span>
+      <h3>Get In Touch</h3>
+      <p>If you want to contact or query any type, just write a mail to me.</p>
+      <form id="contact-popup-form" action="https://formspree.io/f/xaqqypjd" method="POST" class="contact-popup-form formspree-form">
+        <input type="text" name="name" id="popup-name" placeholder="Your Name" required>
+        <span class="error-text" id="popup-name-error"></span>
+        <input type="email" name="email" id="popup-email" placeholder="Your Email" required>
+        <span class="error-text" id="popup-email-error"></span>
+        <input type="tel" name="phone" id="popup-phone" placeholder="Enter phone with country code e.g. +91 9876543210" required>
+        <span class="error-text" id="popup-phone-error"></span>
+        <input type="text" name="subject" id="popup-subject" placeholder="Subject" required>
+        <span class="error-text" id="popup-subject-error"></span>
+        <textarea name="message" id="popup-message" rows="5" placeholder="Message" required></textarea>
+        <span class="error-text" id="popup-message-error"></span>
+        <div class="loading" id="popup-loading" style="display: none;">Loading...</div>
+        <div class="error-message" id="popup-error" style="display: none;"></div>
+        <div class="sent-message" id="popup-success" style="display: none;">Thanks for your submission!</div>
+        <button type="submit" id="popup-submit-btn">Send Message</button>
+      </form>
+      <div class="contact-alternative">
+        <p>Or contact directly:</p>
+        <a href="mailto:mohitdevang.md@gmail.com" class="email-link">mohitdevang.md@gmail.com</a>
+        <a href="https://wa.me/9893255193" class="whatsapp-link" target="_blank">
+          <i class="bi bi-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
 
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-
-      <img src="assets/img/bg-2.jpg" alt="Mohit Devang - Software Developer | IT Consulatnt">
-
-      <div class="container" data-aos="zoom-out">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h1>Mohit Devang — Full Stack Developer & IT Consultant</h1>
-            <p>I'm <span class="typed" data-typed-items="Software Developer, Freelancer, full stack web developer, IT consultant helping businesses with modern web applications, Custom solutions, Digital transformation"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-            <div class="social-links">
-              <a href="https://wa.me/9893255193?text=Hello%2C%20I%20am%20interested%20in%20your%20services."><i class="bi bi-whatsapp"></i></a>
-              <a href="https://www.facebook.com/attituteboyking"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/_m_o_h_i_t_._"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/mohit-devang-5b802323b/"><i class="bi bi-linkedin"></i></a>
+    <section id="hero" class="hero section">
+      <div class="hero-container-box">
+        <div class="container-fluid" style="padding: 0;">
+          <div class="row align-items-center" style="margin: 0;">
+            <!-- Left Side - Title with Background Image -->
+            <div class="col-lg-6 hero-left">
+              <div class="hero-title-wrapper">
+                <div class="hero-title-bg-image">
+                  <img src="assets/img/hero-text-bg-design.png" alt="Geometric Background" class="hero-bg-design">
+                </div>
+                <h1 class="hero-title">
+                  <span class="title-line-1">MOHIT DEVANG</span>
+                  <span class="title-line-2">PORTFOLIO</span>
+                </h1>
+              </div>
             </div>
-            <div class="social-links">
-              <a href="assets/Mohit Resume.pdf" class="">Download Resume<i class="p-2 bi bi-download"></i></a>
+          
+          <!-- Right Side - Profile Picture & Intro -->
+          <div class="col-lg-6 hero-right">
+            <div class="hero-profile-section">
+              <!-- Profile Picture -->
+              <div class="hero-profile-image">
+                <img src="assets/img/my-profile.jpg" alt="Mohit Devang" class="profile-img" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+              </div>
+              
+              <!-- Introduction Text -->
+              <div class="hero-intro">
+                <p class="hero-greeting">Hello, I'm Mohit.</p>
+                <p class="hero-role">A Full-Stack Developer</p>
+                <p class="hero-description">I'm <span class="typed" data-typed-items="Software Developer|, Freelacer|, full stack web developer|, IT consultant helping businesses with modern web applications|, Custom solutions|, Digital transformation|"></span></p>
+                <div class="hero-buttons">
+                  <a href="#hero" class="hero-btn active" onclick="scrollToSection(event, 'hero')">Home</a>
+                  <a href="#dashboard" class="hero-btn" onclick="scrollToSection(event, 'dashboard')">About</a>
+                  <a href="#skills" class="hero-btn" onclick="scrollToSection(event, 'skills')">Skills</a>
+                  <a href="#contact" class="hero-btn" onclick="scrollToSection(event, 'contact')">Contact</a>
+            </div>
             </div>
           </div>
         </div>
       </div>
-
+      </div>
     </section><!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>I’m a results-driven PHP and Python developer with a strong background in web development, RESTful APIs, and database design. I enjoy turning complex problems into clean, maintainable solutions and continuously seek to improve my skillset through hands-on projects and learning new modern technologies.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
+    <!-- Dashboard Sections -->
+    <section id="dashboard" class="dashboard-section section">
+      <div class="container-fluid">
+        <div class="row g-4">
+          
+          <!-- About Me Panel (Left) -->
           <div class="col-lg-4">
-            <img src="assets/img/my-profile.jpg" class="img-fluid" alt="Mohit Devang - Software Developer | IT Consulatnt">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>PHP & Python Developer | Backend Enthusiast</h2>
-            <p class="fst-italic py-3">
-              Motivated and detail-oriented PHP and Python developer with experience in backend development, API integration, and database management.
-              Strong problem-solving skills and a passion for clean, scalable code.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>14 Oct 1998</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.mdtech.org</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 9893255193</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Indore/Ashta (M.P.)</span></li>
-                </ul>
+            <div class="dashboard-panel about-panel" data-aos="fade-up">
+              <h3 class="panel-title">About Me</h3>
+              <div class="about-details">
+                <div class="about-item">
+                  <div class="about-icon">
+                    <i class="bi bi-calendar3"></i>
+                  </div>
+                  <div class="about-text">
+                    <strong>Age</strong>
+                    <span>26 Years</span>
+                  </div>
+                </div>
+                <div class="about-item">
+                  <div class="about-icon">
+                    <i class="bi bi-geo-alt"></i>
+                  </div>
+                  <div class="about-text">
+                    <strong>Location</strong>
+                    <span>Indore/Ashta (M.P.)</span>
+                  </div>
+                </div>
+                <div class="about-item">
+                  <div class="about-icon">
+                    <i class="bi bi-briefcase"></i>
+                  </div>
+                  <div class="about-text">
+                    <strong>Experience</strong>
+                    <span>3+ Years</span>
+                  </div>
+                </div>
+                <div class="about-item">
+                  <div class="about-icon">
+                    <i class="bi bi-envelope"></i>
+                  </div>
+                  <div class="about-text">
+                    <strong>Email</strong>
+                    <span>mohitdevang.md@gmail.com</span>
+                  </div>
+                </div>
+                <div class="about-item">
+                  <div class="about-icon">
+                    <i class="bi bi-mortarboard"></i>
+                  </div>
+                  <div class="about-text">
+                    <strong>Education</strong>
+                    <span>Bachelor's Degree</span>
+                  </div>
+                </div>
               </div>
-              <div class="col-lg-6">
-                <ul>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li> -->
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>mohitdevang.md@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
+              <a href="assets/Mohit Resume.pdf" class="btn-download-cv" download>
+                <i class="bi bi-download"></i> Download CV
+              </a>
+            </div>
+          </div>
+
+          <!-- Skills Panel (Middle) -->
+          <div class="col-lg-4">
+            <div class="dashboard-panel skills-panel" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="panel-title">Skills</h3>
+              <div class="skills-list">
+                <div class="skill-item">
+                  <span class="skill-name">HTML</span>
+                  <div class="skill-progress">
+                    <div class="skill-progress-bar" style="width: 97%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">JavaScript</span>
+                  <div class="skill-progress">
+                    <div class="skill-progress-bar" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">React</span>
+                  <div class="skill-progress">
+                    <div class="skill-progress-bar" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">MongoDB</span>
+                  <div class="skill-progress">
+                    <div class="skill-progress-bar" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Firebase</span>
+                  <div class="skill-progress">
+                    <div class="skill-progress-bar" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">PHP</span>
+                  <div class="skill-progress">
+                    <div class="skill-progress-bar" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Laravel</span>
+                  <div class="skill-progress">
+                    <div class="skill-progress-bar" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Python</span>
+                  <div class="skill-progress">
+                    <div class="skill-progress-bar" style="width: 85%"></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- <p class="py-3">
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-            </p> -->
+          </div>
+
+          <!-- Projects Panel (Right) -->
+          <div class="col-lg-4">
+            <div class="dashboard-panel projects-panel" data-aos="fade-up" data-aos-delay="200">
+              <h3 class="panel-title">Projects</h3>
+              <div class="projects-list">
+                <div class="project-item">
+                  <div class="project-icon">
+                    <i class="bi bi-code-slash"></i>
+          </div>
+                  <div class="project-info">
+                    <h4>MTG Global Travel</h4>
+                    <p>Travel Solutions Platform</p>
+              </div>
+              </div>
+                <div class="project-item">
+                  <div class="project-icon">
+                    <i class="bi bi-shop"></i>
+            </div>
+                  <div class="project-info">
+                    <h4>TradeCo</h4>
+                    <p>E-Commerce Platform</p>
+                  </div>
+                </div>
+                <div class="project-item">
+                  <div class="project-icon">
+                    <i class="bi bi-currency-exchange"></i>
+                  </div>
+                  <div class="project-info">
+                    <h4>Jordan Currency</h4>
+                    <p>Currency Exchange Service</p>
+                  </div>
+                </div>
+                <div class="project-item">
+                  <div class="project-icon">
+                    <i class="bi bi-briefcase"></i>
+                  </div>
+                  <div class="project-info">
+                    <h4>Zolute ERP</h4>
+                    <p>Enterprise Resource Planning</p>
+                  </div>
+                </div>
+              </div>
+              <a href="assets/Mohit Resume.pdf" class="btn-view-resume" target="_blank">
+                <i class="bi bi-file-earmark-text"></i> View Resume
+              </a>
           </div>
         </div>
 
       </div>
-
-    </section><!-- /About Section -->
+      </div>
+    </section><!-- /Dashboard Sections -->
 
     <!-- Stats Section -->
     <section id="stats" class="stats section">
@@ -172,7 +360,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-emoji-smile"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter">+</span>
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter">+</span>
               <p>Happy Clients</p>
             </div>
           </div><!-- End Stats Item -->
@@ -180,7 +368,7 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="bi bi-journal-richtext"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter">+</span>
+              <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1" class="purecounter">+</span>
               <p>Projects</p>
             </div>
           </div><!-- End Stats Item -->
@@ -420,16 +608,63 @@
     </section><!-- /Resume Section -->
 
     <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Showcasing My Work — Projects That Demonstrate Technical Excellence and Innovation</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
       <!-- Portfolio Item -->
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
+          <img src="assets/img/client-logo/zealdash_logo.png" 
+              class="img-fluid mb-3 mx-auto d-block" 
+              style="height: 180px; object-fit: contain;" 
+              alt="ZealDash">
+              
+          <div class="portfolio-info mt-auto">
+            <h4 class="h6 fw-bold">ZealDash</h4>
+            <p class="small">
+              ZealDash is a modern CRM and business management platform designed to streamline sales, customer engagement, task tracking, and workflow automation for growing businesses.
+            </p>
+            <a href="https://www.zealdash.com/" 
+              title="More Details" 
+              class="details-link fs-5" 
+              target="_blank">
+              <i class="bi bi-eye"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
+          <img src="assets/img/client-logo/q8basket.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="Q8Basket">
+          <div class="portfolio-info mt-auto">
+            <h4 class="h6 fw-bold">Q8Basket</h4>
+            <p class="small">
+              Q8Basket is an online grocery and essentials delivery platform offering a wide range of fresh produce, household items, and daily needs with fast, reliable doorstep delivery.
+            </p>
+            <a href="https://q8basket.com" title="More Details" class="details-link fs-5" target="_blank">
+              <i class="bi bi-eye"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Item -->
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
           <img src="assets/img/client-logo/mtg.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">MTG Global Travel Services</h4>
             <p class="small">MTG is a comprehensive travel solutions provider offering tailored domestic and international travel services, including flights, hotels, visas, cab and holiday packages for individuals and corporate clients.</p>
-            <a href="https://ctbs-backend.zolute.xyz" title="More Details" class="details-link text-primary fs-5" target="_blank"><i class="bi bi-eye"></i></a>
+            <a href="https://ctbs-backend.zolute.xyz" title="More Details" class="details-link fs-5" target="_blank"><i class="bi bi-eye"></i></a>
           </div>
         </div>
       </div>
@@ -437,8 +672,8 @@
       <!-- Repeat for each item below -->
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
-          <img src="assets/img/client-logo/mlm.jpg" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
+          <img src="assets/img/client-logo/Trade-Co-3.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">TradeCo</h4>
             <p class="small">TradeCo is a networking-driven e-commerce platform that connects businesses and buyers, enabling seamless trade, collaboration, and growth through a unified online marketplace.</p>
@@ -448,7 +683,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
           <img src="assets/img/client-logo/Jordan-logo.jpg" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">Jordan Currency</h4>
@@ -459,8 +694,8 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
-          <img src="assets/img/client-logo/zolute_erp.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
+          <img src="assets/img/client-logo/zolute_group.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">Zolute Consulting</h4>
             <p class="small">Zolute Consulting is an IT consulting firm providing tailored technology solutions, digital strategy, and expert guidance to help businesses innovate, scale, and succeed in the digital landscape.</p>
@@ -470,18 +705,18 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
-          <img src="assets/img/client-logo/infiwealth.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
+          <img src="assets/img/client-logo/InfiLogo-new.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">InfiAlgo</h4>
             <p class="small">InfiAlgo is an AI-based algorithmic trading platform designed to automate and optimize trading strategies, delivering faster, smarter, and data-driven decisions in the financial markets.</p>
-            <a href="https://stg.infiwealth.ai/infi-algo" title="More Details" class="details-link text-primary fs-5" target="_blank"><i class="bi bi-eye"></i></a>
+            <a href="https://infialgo.ai/" title="More Details" class="details-link text-primary fs-5" target="_blank"><i class="bi bi-eye"></i></a>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
           <img src="assets/img/client-logo/zolute_erp.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">Zolute ERP</h4>
@@ -492,7 +727,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
           <img src="assets/img/client-logo/infiwealth.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">InfiWealth</h4>
@@ -503,7 +738,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
           <img src="assets/img/client-logo/khyati_ispat.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">Khyati Ispat</h4>
@@ -514,7 +749,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
           <img src="assets/img/client-logo/iauditlogo.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">IAudit HRMS</h4>
@@ -525,7 +760,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
           <img src="assets/img/client-logo/los_logo.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">LOS</h4>
@@ -536,7 +771,7 @@
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-        <div class="h-100 d-flex flex-column border rounded p-3 bg-white">
+        <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
           <img src="assets/img/client-logo/one2one_logo.jpg" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">One2One Scheduler</h4>
@@ -545,10 +780,8 @@
           </div>
         </div>
       </div>
-
     </div>
-
-    <!-- /Portfolio Section -->
+    </section><!-- /Portfolio Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
@@ -780,12 +1013,15 @@
     </section><!-- /Testimonials Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section d-none">
+    <section id="contact" class="contact section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>If you want to contact or query any type, just write a mail to me.</p>
+        <div class="ai-bot-below-form" data-aos="fade-up" data-aos-delay="150">
+          <img src="assets/img/ai-bot-icon.png" alt="AI Assistant" class="ai-bot-icon-small">
+        </div>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade" data-aos-delay="100">
@@ -796,55 +1032,64 @@
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h3>Location</h3>
+                <p>Indore/Ashta (M.P.), India</p>
               </div>
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <h3>Phone</h3>
+                <p><a href="tel:+919893255193">+91 9893255193</a></p>
               </div>
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
-                <h3>Email Us</h3>
-                <p>info@example.com</p>
+                <h3>Email</h3>
+                <p><a href="mailto:mohitdevang.md@gmail.com">mohitdevang.md@gmail.com</a></p>
               </div>
             </div><!-- End Info Item -->
 
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form id="contact-form" action="https://formspree.io/f/xaqqypjd" method="POST" class="php-email-form formspree-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input type="text" name="name" id="contact-name" class="form-control" placeholder="Your Name" required>
+                  <span class="error-text" id="name-error"></span>
                 </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                <div class="col-md-6">
+                  <input type="email" name="email" id="contact-email" class="form-control" placeholder="Your Email" required>
+                  <span class="error-text" id="email-error"></span>
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <input type="tel" name="phone" id="contact-phone" class="form-control phone-input" placeholder="Enter phone with country code e.g. +91 9876543210" required>
+                  <span class="error-text" id="phone-error"></span>
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <input type="text" name="subject" id="contact-subject" class="form-control" placeholder="Subject" required>
+                  <span class="error-text" id="subject-error"></span>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" id="contact-message" rows="6" placeholder="Message" required></textarea>
+                  <span class="error-text" id="message-error"></span>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <div class="loading" id="form-loading">Loading</div>
+                  <div class="error-message" id="form-error"></div>
+                  <div class="sent-message" id="form-success">Thanks for your submission!</div>
 
-                  <button type="submit">Send Message</button>
+                  <button type="submit" id="form-submit-btn">Send Message</button>
                 </div>
 
               </div>
@@ -890,9 +1135,11 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
+  <!-- Particles.js for animated background -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -904,6 +1151,205 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Formspree Form Handler -->
+  <script>
+    const SUBMIT_KEY = 'contactSubmitted';
+
+    const tempEmailDomains = [
+      'tempmail.com','10minutemail.com','guerrillamail.com','mailinator.com',
+      'throwaway.email','temp-mail.org','getnada.com','mohmal.com',
+      'yopmail.com','sharklasers.com','trashmail.com','fakeinbox.com',
+      'dispostable.com','mintemail.com','emailondeck.com','mytrashmail.com'
+    ];
+
+    function isValidEmail(email) {
+      // Basic email format validation: must have @ and domain with dot
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) return false;
+      
+      // Check if domain is exactly a temp email domain (exact match, not includes)
+      const domain = email.split('@')[1]?.toLowerCase();
+      if (!domain) return false;
+      
+      // Only block if domain exactly matches or is a subdomain of temp email domains
+      return !tempEmailDomains.some(temp => {
+        return domain === temp || domain.endsWith('.' + temp);
+      });
+    }
+
+    function isValidPhone(phone) {
+      // Allow phone with country code: +91 9876543210 or +919876543210
+      const cleaned = phone.replace(/\s+/g, '');
+      return /^\+?[0-9]{8,18}$/.test(cleaned);
+    }
+
+    function showError(el, msg) {
+      if (!el) return;
+      el.style.borderColor = '#ff4444';
+      const err = el.nextElementSibling;
+      if (err && err.classList.contains('error-text')) {
+        err.textContent = msg;
+        err.style.display = 'block';
+      }
+    }
+
+    function clearError(el) {
+      if (!el) return;
+      el.style.borderColor = '';
+      const err = el.nextElementSibling;
+      if (err && err.classList.contains('error-text')) {
+        err.textContent = '';
+        err.style.display = 'none';
+      }
+    }
+
+    function disableForm(form) {
+      form.querySelectorAll('input, textarea, button').forEach(el => el.disabled = true);
+      const success = form.querySelector('.sent-message');
+      if (success) {
+        success.style.display = 'block';
+        success.textContent = 'You already submitted. Thank you!';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const submitted = localStorage.getItem(SUBMIT_KEY);
+      const forms = document.querySelectorAll('.formspree-form');
+
+      forms.forEach(form => {
+        if (submitted) {
+          disableForm(form);
+          return;
+        }
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const loading = form.querySelector('.loading');
+          const errorBox = form.querySelector('.error-message');
+          const successBox = form.querySelector('.sent-message');
+          const submitBtn = form.querySelector('button[type="submit"]');
+
+          if (loading) loading.style.display = 'block';
+          if (errorBox) { errorBox.style.display = 'none'; errorBox.textContent = ''; }
+          if (successBox) successBox.style.display = 'none';
+
+          const nameEl = form.querySelector('input[name="name"]');
+          const emailEl = form.querySelector('input[name="email"]');
+          const phoneEl = form.querySelector('input[name="phone"]');
+          const subjectEl = form.querySelector('input[name="subject"]');
+          const messageEl = form.querySelector('textarea[name="message"]');
+
+          [nameEl, emailEl, phoneEl, subjectEl, messageEl].forEach(clearError);
+
+          let valid = true;
+          if (!nameEl.value.trim() || nameEl.value.trim().length < 2) {
+            showError(nameEl, 'Please enter your name (min 2 chars)');
+            valid = false;
+          }
+          const emailValue = emailEl.value.trim();
+          if (!emailValue || !isValidEmail(emailValue)) {
+            if (!emailValue) {
+              showError(emailEl, 'Please enter your email address');
+            } else {
+              showError(emailEl, 'Please enter a valid email address (format: name@domain.com)');
+            }
+            valid = false;
+          }
+          if (!phoneEl.value.trim() || !isValidPhone(phoneEl.value.trim())) {
+            showError(phoneEl, 'Please enter phone with country code (e.g. +91 9876543210)');
+            valid = false;
+          }
+          if (!subjectEl.value.trim() || subjectEl.value.trim().length < 3) {
+            showError(subjectEl, 'Please enter a subject (min 3 chars)');
+            valid = false;
+          }
+          if (!messageEl.value.trim() || messageEl.value.trim().length < 10) {
+            showError(messageEl, 'Please enter a message (min 10 chars)');
+            valid = false;
+          }
+
+          if (!valid) {
+            if (loading) loading.style.display = 'none';
+            if (submitBtn) submitBtn.disabled = false;
+            return;
+          }
+
+          if (submitBtn) submitBtn.disabled = true;
+
+          const data = new FormData();
+          data.append('name', nameEl.value.trim());
+          data.append('email', emailEl.value.trim());
+          data.append('phone', phoneEl.value.trim());
+          data.append('subject', subjectEl.value.trim());
+          data.append('message', messageEl.value.trim());
+
+          try {
+            const response = await fetch(form.action, {
+              method: form.method,
+              body: data,
+              headers: { 'Accept': 'application/json' }
+            });
+            if (loading) loading.style.display = 'none';
+
+            if (response.ok) {
+              if (successBox) {
+                successBox.style.display = 'block';
+                successBox.textContent = 'Thanks for your submission!';
+              }
+              
+              // Clear all errors before reset
+              form.querySelectorAll('.error-text').forEach(err => {
+                err.textContent = '';
+                err.style.display = 'none';
+              });
+              form.querySelectorAll('input, textarea').forEach(el => {
+                el.style.borderColor = '';
+              });
+              
+              form.reset();
+              localStorage.setItem(SUBMIT_KEY, 'true');
+              
+              // Close modal if it's the popup form
+              if (form.id === 'contact-popup-form') {
+                setTimeout(() => {
+                  closeContactPopup();
+                }, 2000);
+              }
+              
+              disableForm(form);
+            } else {
+              let errorMsg = 'Oops! There was a problem submitting your form';
+              try {
+                const resData = await response.json();
+                if (resData.errors && Array.isArray(resData.errors)) {
+                  errorMsg = resData.errors.map(e => e.message || e).join(', ');
+                } else if (resData.error) {
+                  errorMsg = resData.error;
+                }
+              } catch (e) {
+                // If JSON parsing fails, use default message
+              }
+              
+              if (errorBox) {
+                errorBox.textContent = errorMsg;
+                errorBox.style.display = 'block';
+              }
+              if (submitBtn) submitBtn.disabled = false;
+            }
+          } catch (err) {
+            if (loading) loading.style.display = 'none';
+            if (errorBox) {
+              errorBox.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+              errorBox.style.display = 'block';
+            }
+            if (submitBtn) submitBtn.disabled = false;
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 

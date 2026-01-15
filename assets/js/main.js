@@ -79,10 +79,116 @@
     }, 500);
   }
 
+  /**
+   * Demo Modal Functions
+   */
+  function openDemoModal(productName) {
+    const modal = document.getElementById('demoModal');
+    const productField = document.getElementById('demo-product-field');
+    const productNameSpan = document.getElementById('demo-product-name');
+    const subjectField = document.getElementById('demo-subject');
+    
+    if (modal && productField && productNameSpan && subjectField) {
+      productField.value = productName;
+      productNameSpan.textContent = productName;
+      
+      const prefix = `REQUEST FOR DEMO – ${productName} – `;
+      subjectField.value = prefix;
+      subjectField.setAttribute('data-prefix', prefix);
+      
+      // Check if already submitted this month
+      const submitKey = `demoSubmitted_${productName}`;
+      const submitted = localStorage.getItem(submitKey);
+      if (submitted) {
+        const submitDate = new Date(submitted);
+        const now = new Date();
+        const daysDiff = Math.floor((now - submitDate) / (1000 * 60 * 60 * 24));
+        
+        if (daysDiff < 30) {
+          const submitBtn = document.getElementById('demo-submit-btn');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Already Submitted (Once per month)';
+            submitBtn.style.opacity = '0.6';
+            submitBtn.style.cursor = 'not-allowed';
+          }
+          
+          const successMsg = document.getElementById('demo-success');
+          if (successMsg) {
+            successMsg.textContent = `You already requested a demo for ${productName} this month. Thank you!`;
+            successMsg.style.display = 'block';
+          }
+        } else {
+          localStorage.removeItem(submitKey);
+          const submitBtn = document.getElementById('demo-submit-btn');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Request';
+            submitBtn.style.opacity = '1';
+            submitBtn.style.cursor = 'pointer';
+          }
+          const successMsg = document.getElementById('demo-success');
+          if (successMsg) {
+            successMsg.style.display = 'none';
+          }
+        }
+      } else {
+        const submitBtn = document.getElementById('demo-submit-btn');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Request';
+          submitBtn.style.opacity = '1';
+          submitBtn.style.cursor = 'pointer';
+        }
+        const successMsg = document.getElementById('demo-success');
+        if (successMsg) {
+          successMsg.style.display = 'none';
+        }
+      }
+      
+      const form = document.getElementById('demo-form');
+      if (form) {
+        form.reset();
+        subjectField.value = prefix;
+        subjectField.setAttribute('data-prefix', prefix);
+        
+        form.querySelectorAll('.error-text').forEach(err => {
+          err.textContent = '';
+          err.style.display = 'none';
+        });
+        form.querySelectorAll('input, textarea').forEach(el => {
+          el.style.borderColor = '';
+        });
+      }
+      
+      modal.style.display = 'flex';
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      
+      setTimeout(() => {
+        const nameField = document.getElementById('demo-name');
+        if (nameField) {
+          nameField.focus();
+        }
+      }, 100);
+    }
+  }
+
+  function closeDemoModal() {
+    const modal = document.getElementById('demoModal');
+    if (modal) {
+      modal.style.display = 'none';
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  }
+
   // Make functions globally available
   window.openContactPopup = openContactPopup;
   window.closeContactPopup = closeContactPopup;
   window.sendEmail = sendEmail;
+  window.openDemoModal = openDemoModal;
+  window.closeDemoModal = closeDemoModal;
 
   // Close popup when clicking outside
   document.addEventListener('click', function(event) {
@@ -329,21 +435,17 @@
    */
   let scrollTop = document.querySelector('.scroll-top');
 
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  // Keep scroll-top button always visible
+  if (scrollTop) {
+    scrollTop.classList.add('active');
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
-
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+  }
 
   /**
    * Animation on scroll function and init

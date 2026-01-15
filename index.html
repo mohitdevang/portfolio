@@ -4,16 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Mohit Devang | Full Stack Developer & IT Consultant</title>
-  <meta name="description" content="Mohit Devang is a full stack web developer and IT consultant. Expert in Html, Css, Bootstrap, Javascript, React, Vue.js, Laravel, CodeIgniter, Python, MongoDB, MySQL and more. Helping businesses build scalable applications.">
-  <meta name="keywords" content="Mohit Devang, Full Stack Developer, IT Consultant, Web Developer, Html, Css, Bootstrap, Javascript, Laravel, Vue.js, React, Freelance Developer, mdtech">
+  <title>Mohit Devang | Full Stack Developer & IT Consultant | PHP Laravel Python Expert</title>
+  <meta name="description" content="Mohit Devang - Expert Full Stack Developer & IT Consultant specializing in PHP, Laravel, CodeIgniter, Python, JavaScript, MySQL, MongoDB. 3+ years experience building CRM, ERP, eCommerce platforms, REST APIs, and SaaS solutions. Available for remote work globally.">
+  <meta name="keywords" content="Mohit Devang, Full Stack Developer, PHP Developer, Laravel Developer, CodeIgniter Developer, Python Developer, IT Consultant, Web Developer, CRM Developer, ERP Developer, eCommerce Developer, REST API Developer, SaaS Developer, Remote Developer, Freelance Developer, Backend Developer, Frontend Developer, MySQL Developer, MongoDB Developer, JavaScript Developer, Bootstrap Developer, Tailwind CSS Developer, Payment Gateway Integration, JWT Authentication, Indore Developer, India Developer, mdtech">
   <meta name="author" content="Mohit Devang">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://mohitdevang.github.io/portfolio/">
 
   <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Mohit Devang | Full Stack Developer & IT Consultant">
-  <meta property="og:description" content="Full Stack Developer and IT Consultant specializing in PHP, Laravel, Vue.js, and Python. Check out my portfolio.">
+  <meta property="og:title" content="Mohit Devang | Full Stack Developer & IT Consultant | PHP Laravel Python Expert">
+  <meta property="og:description" content="Expert Full Stack Developer & IT Consultant with 3+ years experience in PHP, Laravel, CodeIgniter, Python, JavaScript. Specialized in CRM, ERP, eCommerce, REST APIs, and SaaS solutions. Available for remote work globally.">
   <meta property="og:url" content="https://mohitdevang.github.io/portfolio/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://mohitdevang.github.io/portfolio/assets/img/my-profile.jpg">
@@ -65,7 +65,9 @@
       "@type": "Organization",
       "name": "Freelance / Self-employed / mdtech.org"
     },
-    "description": "Mohit Devang is a full stack web developer and IT consultant with expertise in Html, Css, Javascript, React, View.js, PHP, Laravel, CodeIgniter, Python, MySql, MongoDb and all modern technologies. Helping businesses build fast, modern, and scalable web applications.",
+    "description": "Mohit Devang is an expert Full Stack Developer & IT Consultant with 3+ years of experience in PHP, Laravel, CodeIgniter, Python, JavaScript, MySQL, MongoDB. Specialized in building CRM systems, ERP platforms, eCommerce solutions, REST APIs, SaaS applications, and modern web applications. Available for remote work globally.",
+    "keywords": "Full Stack Developer, PHP Developer, Laravel Developer, CodeIgniter Developer, Python Developer, CRM Developer, ERP Developer, eCommerce Developer, REST API Developer, SaaS Developer, Remote Developer, Freelance Developer",
+    "knowsAbout": ["PHP", "Laravel", "CodeIgniter", "Python", "JavaScript", "MySQL", "MongoDB", "REST APIs", "CRM Development", "ERP Development", "eCommerce Development", "SaaS Development", "Payment Gateway Integration", "JWT Authentication"],
     "image": "https://mohitdevang.github.io/portfolio/assets/img/my-profile.jpg"
   }
   </script>
@@ -100,6 +102,32 @@
       </div>
     </div>
   </header>
+
+  <!-- Request Demo Modal (Reusable) -->
+  <div id="demoModal" class="contact-popup">
+    <div class="contact-popup-content demo-modal-content">
+      <span class="close-popup" onclick="closeDemoModal()">&times;</span>
+      <h3 id="demo-modal-title">Request Demo – <span id="demo-product-name"></span></h3>
+      <p>Fill out the form below and we'll get back to you soon.</p>
+      <form id="demo-form" action="https://formspree.io/f/xaqqypjd" method="POST" class="contact-popup-form formspree-demo-form">
+        <input type="hidden" name="product" id="demo-product-field" value="">
+        <input type="text" name="name" id="demo-name" placeholder="Your Name" required>
+        <span class="error-text" id="demo-name-error"></span>
+        <input type="email" name="email" id="demo-email" placeholder="Your Email" required>
+        <span class="error-text" id="demo-email-error"></span>
+        <input type="tel" name="phone" id="demo-phone" placeholder="Enter phone with country code e.g. +91 9876543210" required>
+        <span class="error-text" id="demo-phone-error"></span>
+        <input type="text" name="subject" id="demo-subject" placeholder="Subject" required>
+        <span class="error-text" id="demo-subject-error"></span>
+        <textarea name="message" id="demo-message" rows="5" placeholder="Your Message (Optional)" ></textarea>
+        <span class="error-text" id="demo-message-error"></span>
+        <div class="loading" id="demo-loading" style="display: none;">Loading...</div>
+        <div class="error-message" id="demo-error" style="display: none;"></div>
+        <div class="sent-message" id="demo-success" style="display: none;">Thanks for your submission!</div>
+        <button type="submit" id="demo-submit-btn">Send Request</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Contact Popup Modal -->
   <div id="contactPopup" class="contact-popup">
@@ -167,9 +195,10 @@
                 <p class="hero-role">A Full-Stack Developer</p>
                 <p class="hero-description">I'm <span class="typed" data-typed-items="Software Developer|, Freelacer|, full stack web developer|, IT consultant helping businesses with modern web applications|, Custom solutions|, Digital transformation|"></span></p>
                 <div class="hero-buttons">
-                  <a href="#hero" class="hero-btn active" onclick="scrollToSection(event, 'hero')">Home</a>
                   <a href="#dashboard" class="hero-btn" onclick="scrollToSection(event, 'dashboard')">About</a>
                   <a href="#skills" class="hero-btn" onclick="scrollToSection(event, 'skills')">Skills</a>
+                  <a href="#portfolio" class="hero-btn" onclick="scrollToSection(event, 'portfolio')">Portfolio</a>
+                  <a href="#products" class="hero-btn" onclick="scrollToSection(event, 'products')">Products</a>
                   <a href="#contact" class="hero-btn" onclick="scrollToSection(event, 'contact')">Contact</a>
             </div>
             </div>
@@ -184,165 +213,84 @@
       <div class="container-fluid">
         <div class="row g-4">
           
-          <!-- About Me Panel (Left) -->
-          <div class="col-lg-4">
+          <!-- About Me Panel -->
+          <div class="col-lg-12">
             <div class="dashboard-panel about-panel" data-aos="fade-up">
               <h3 class="panel-title">About Me</h3>
-              <div class="about-details">
-                <div class="about-item">
-                  <div class="about-icon">
-                    <i class="bi bi-calendar3"></i>
+              <div class="about-content-wrapper">
+                <div class="about-details">
+                  <div class="about-item">
+                    <div class="about-icon">
+                      <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div class="about-text">
+                      <strong>Location</strong>
+                      <span>Indore/Ashta (M.P.)</span>
+                    </div>
                   </div>
-                  <div class="about-text">
-                    <strong>Age</strong>
-                    <span>26 Years</span>
+                  <div class="about-item">
+                    <div class="about-icon">
+                      <i class="bi bi-globe"></i>
+                    </div>
+                    <div class="about-text">
+                      <strong>Availability</strong>
+                      <span>Globally Anywhere - Remote</span>
+                    </div>
+                  </div>
+                  <div class="about-item">
+                    <div class="about-icon">
+                      <i class="bi bi-briefcase"></i>
+                    </div>
+                    <div class="about-text">
+                      <strong>Experience</strong>
+                      <span>3+ Years</span>
+                    </div>
+                  </div>
+                  <div class="about-item">
+                    <div class="about-icon">
+                      <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="about-text">
+                      <strong>Email</strong>
+                      <span>mohitdevang.md@gmail.com</span>
+                    </div>
+                  </div>
+                  <div class="about-item">
+                    <div class="about-icon">
+                      <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <div class="about-text">
+                      <strong>Education</strong>
+                      <span>Bachelor's Degree</span>
+                    </div>
+                  </div>
+                  <div class="about-item">
+                    <div class="about-icon">
+                      <i class="bi bi-code-slash"></i>
+                    </div>
+                    <div class="about-text">
+                      <strong>Specialization</strong>
+                      <span>Full Stack Development</span>
+                    </div>
                   </div>
                 </div>
-                <div class="about-item">
-                  <div class="about-icon">
-                    <i class="bi bi-geo-alt"></i>
-                  </div>
-                  <div class="about-text">
-                    <strong>Location</strong>
-                    <span>Indore/Ashta (M.P.)</span>
-                  </div>
-                </div>
-                <div class="about-item">
-                  <div class="about-icon">
-                    <i class="bi bi-briefcase"></i>
-                  </div>
-                  <div class="about-text">
-                    <strong>Experience</strong>
-                    <span>3+ Years</span>
-                  </div>
-                </div>
-                <div class="about-item">
-                  <div class="about-icon">
-                    <i class="bi bi-envelope"></i>
-                  </div>
-                  <div class="about-text">
-                    <strong>Email</strong>
-                    <span>mohitdevang.md@gmail.com</span>
-                  </div>
-                </div>
-                <div class="about-item">
-                  <div class="about-icon">
-                    <i class="bi bi-mortarboard"></i>
-                  </div>
-                  <div class="about-text">
-                    <strong>Education</strong>
-                    <span>Bachelor's Degree</span>
-                  </div>
+                <div class="about-description">
+                  <p>Results-driven Full Stack Developer with 3+ years of experience building scalable web applications using PHP (Laravel, CodeIgniter), MySQL, and Python. Experienced in designing REST APIs, developing admin panels, optimizing backend performance, and modernizing legacy systems. Strong collaborator with experience across SaaS, ERP, CRM, and eCommerce products.</p>
+                  <p><strong>Major Projects:</strong></p>
+                  <ul class="about-projects-list">
+                    <li><strong>MTG Travel Booking System (Laravel):</strong> Built admin panel, role-based access, booking workflows, travel request APIs, provider management, internal chat, dashboards, and audit trails.</li>
+                    <li><strong>CRM SaaS (CodeIgniter 3):</strong> Enhanced super-admin and tenant panels for package management, invoicing, subscription handling, reports, tasks, leads, support, and customizable settings.</li>
+                    <li><strong>Q8 Basket — eCommerce (Laravel):</strong> Developed product/catalog modules, cart & checkout flows, coupon & discount systems, order processing, delivery tracking, and user account management.</li>
+                    <li><strong>ERP System (CodeIgniter 3):</strong> Built and maintained task management, employee workflows, approval systems, reporting tools, and performance optimizations.</li>
+                    <li><strong>Share Market Web Portal:</strong> Converted InfWealth to modern responsive theme with dynamic data widgets and charts. Developed InfAlg0 frontend pages and connected dynamic forms to backend logic.</li>
+                  </ul>
+                  <p>Available for remote work globally, I'm always ready to take on new challenges and collaborate with teams worldwide to create innovative solutions.</p>
                 </div>
               </div>
-              <a href="assets/Mohit Resume.pdf" class="btn-download-cv" download>
+              <a href="assets/Mohit_Devang_Resume.pdf" class="btn-download-cv" download>
                 <i class="bi bi-download"></i> Download CV
               </a>
             </div>
-          </div>
-
-          <!-- Skills Panel (Middle) -->
-          <div class="col-lg-4">
-            <div class="dashboard-panel skills-panel" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="panel-title">Skills</h3>
-              <div class="skills-list">
-                <div class="skill-item">
-                  <span class="skill-name">HTML</span>
-                  <div class="skill-progress">
-                    <div class="skill-progress-bar" style="width: 97%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">JavaScript</span>
-                  <div class="skill-progress">
-                    <div class="skill-progress-bar" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">React</span>
-                  <div class="skill-progress">
-                    <div class="skill-progress-bar" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">MongoDB</span>
-                  <div class="skill-progress">
-                    <div class="skill-progress-bar" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Firebase</span>
-                  <div class="skill-progress">
-                    <div class="skill-progress-bar" style="width: 80%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">PHP</span>
-                  <div class="skill-progress">
-                    <div class="skill-progress-bar" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Laravel</span>
-                  <div class="skill-progress">
-                    <div class="skill-progress-bar" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Python</span>
-                  <div class="skill-progress">
-                    <div class="skill-progress-bar" style="width: 85%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Projects Panel (Right) -->
-          <div class="col-lg-4">
-            <div class="dashboard-panel projects-panel" data-aos="fade-up" data-aos-delay="200">
-              <h3 class="panel-title">Projects</h3>
-              <div class="projects-list">
-                <div class="project-item">
-                  <div class="project-icon">
-                    <i class="bi bi-code-slash"></i>
-          </div>
-                  <div class="project-info">
-                    <h4>MTG Global Travel</h4>
-                    <p>Travel Solutions Platform</p>
-              </div>
-              </div>
-                <div class="project-item">
-                  <div class="project-icon">
-                    <i class="bi bi-shop"></i>
-            </div>
-                  <div class="project-info">
-                    <h4>TradeCo</h4>
-                    <p>E-Commerce Platform</p>
-                  </div>
-                </div>
-                <div class="project-item">
-                  <div class="project-icon">
-                    <i class="bi bi-currency-exchange"></i>
-                  </div>
-                  <div class="project-info">
-                    <h4>Jordan Currency</h4>
-                    <p>Currency Exchange Service</p>
-                  </div>
-                </div>
-                <div class="project-item">
-                  <div class="project-icon">
-                    <i class="bi bi-briefcase"></i>
-                  </div>
-                  <div class="project-info">
-                    <h4>Zolute ERP</h4>
-                    <p>Enterprise Resource Planning</p>
-                  </div>
-                </div>
-              </div>
-              <a href="assets/Mohit Resume.pdf" class="btn-view-resume" target="_blank">
-                <i class="bi bi-file-earmark-text"></i> View Resume
-              </a>
           </div>
         </div>
 
@@ -411,61 +359,23 @@
           <div class="col-lg-4">
 
             <div class="progress">
-              <span class="skill"><span>HTML</span> <i class="val">97%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>CSS</span> <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Bootstrap</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            
-            <div class="progress">
-              <span class="skill"><span>Tailwind Css</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-          <div class="col-lg-4">
-
-            <div class="progress">
               <span class="skill"><span>PHP</span> <i class="val">95%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <!-- End Skills Item -->
 
             <div class="progress">
-              <span class="skill"><span>CodeIgniter</span> <i class="val">90%</i></span>
+              <span class="skill"><span>Laravel</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-            
+            <!-- End Skills Item -->
+
             <div class="progress">
-              <span class="skill"><span>Laravel</span> <i class="val">90%</i></span>
+              <span class="skill"><span>CodeIgniter 3/4</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -477,21 +387,11 @@
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
-            
-            <div class="progress">
-              <span class="skill"><span>Django</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-          
-          <div class="col-lg-4">
+            </div>
+            <!-- End Skills Item -->
 
             <div class="progress">
-              <span class="skill"><span>MySql</span> <i class="val">90%</i></span>
+              <span class="skill"><span>JavaScript</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -499,11 +399,116 @@
             <!-- End Skills Item -->
 
             <div class="progress">
-              <span class="skill"><span>Mongo DB</span> <i class="val">85%</i></span>
+              <span class="skill"><span>jQuery & AJAX</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+          </div>
+          
+          <div class="col-lg-4">
+
+            <div class="progress">
+              <span class="skill"><span>HTML5 & CSS3</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Bootstrap</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Tailwind CSS</span> <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>MySQL</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>MongoDB</span> <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>SQL</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+          </div>
+          
+          <div class="col-lg-4">
+
+            <div class="progress">
+              <span class="skill"><span>RESTful APIs</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>JWT Authentication</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Payment Gateway Integration</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Git & Version Control</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Cron Jobs</span> <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Composer & npm</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- End Skills Item -->
 
           </div>
 
@@ -530,74 +535,70 @@
             <h3 class="resume-title">Graduation</h3>
 
             <div class="resume-item pb-0">
-              <h4>BCA - (Bachelor of Computer Application)</h4>
-              <p><em>Shaheed Bhagat Singh Govt. College, Ashta - M.P.</em></p>
-              <ul>
-                <li>2018- 2021 </li>
-              </ul>
-            </div><!-- Edn Resume Item -->
+              <h4>BCA (Bachelor of Computer Application)</h4>
+              <h5>Barkatullah University, Bhopal</h5>
+              <p><em>2018 – 2021</em></p>
+            </div><!-- End Resume Item -->
 
             <h3 class="resume-title">Diploma</h3>
             <div class="resume-item">
-              <h4>DCA - (Diploma in Computer Application)</h4>
-              <h5>Makhanlal Chaturvedi University of communication &journalism, Bhopal - M.P.</h5>
-              <p><em>2017 - 2018 </em></p>
-            </div><!-- Edn Resume Item -->
+              <h4>DCA (Diploma in Computer Application)</h4>
+              <h5>Makhanlal Chaturvedi University, Bhopal</h5>
+              <p><em>2017 – 2018</em></p>
+            </div><!-- End Resume Item -->
 
-            <h3 class="resume-title">High & Higher Secondary School</h3>
+            <h3 class="resume-title">Certifications</h3>
             <div class="resume-item">
-              <h4>Talent Innovative Higher Secondary School, Ashta - MP</h4>
-              <h5>2015  - 2016  </h5>
-            </div><!-- Edn Resume Item -->
-            
-            <div class="resume-item">
-              <h4>Srijan Convent High School , Ashta - MP</h4>
-              <h5>2013  - 2014  </h5>
-            </div><!-- Edn Resume Item -->
+              <h4>Python Full Stack Development Internship</h4>
+              <h5>Cybrom Technology</h5>
+              <p><em>2022 – 2023</em></p>
+            </div><!-- End Resume Item -->
 
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <h3 class="resume-title">Professional Experience</h3>
             <div class="resume-item">
-              <h4>Zolute Technology & Consulting., UAE</h4>
-              <h5>November 2024 - Present</h5>
-              <p><em>PHP & Python Developer (Remote) </em></p>
+              <h4>Zolute Technology & Consulting</h4>
+              <h5>Nov 2024 – Oct 2025</h5>
+              <p><em>PHP / Python Developer (Remote)</em></p>
               <ul>
-                <li>Lead in the development and implementation of the logic, layout, and production communication materials</li>
-                <li>Fulfil client expected requirements to technical on their projects and maintain there projects.</li>
+                <li>Worked on CRM, ERP, and automation platforms; implemented end-to-end backend modules.</li>
+                <li>Built RESTful APIs, admin dashboards, roles & permissions, audit trails, and analytics.</li>
+                <li>Developed Python utilities for server automation and file processing.</li>
+                <li>Optimized SQL queries and improved application responsiveness through caching and indexing.</li>
               </ul>
-            </div><!-- Edn Resume Item -->
+            </div><!-- End Resume Item -->
 
             <div class="resume-item">
-              <h4>Xampp India Software Pvt. Ltd., Indore </h4>
-              <h5>July 2024 - November 2024</h5>
-              <p><em> (Hybrid)</em></p>
+              <h4>Xampp India Software Pvt. Ltd., Indore</h4>
+              <h5>Jul 2024 – Nov 2024</h5>
+              <p><em>PHP Developer (Hybrid)</em></p>
               <ul>
-                <li>Developed numerous Ispat industry software modifications.</li>
-                <li>Managed up to 2 products or tasks at a given time while under pressure</li>
-                <li>Enhance new requirements and modifications in Company’s Products ‘iAudit - Hrm’ on core PHP.</li>
+                <li>Developed HRM and ERP modules (attendance, tasks, reporting).</li>
+                <li>Enhanced UI components and refactored legacy code for stability and maintainability.</li>
               </ul>
-            </div><!-- Edn Resume Item -->
+            </div><!-- End Resume Item -->
             
             <div class="resume-item">
-              <h4>NXG Infosystem Pvt. Ltd., Indore </h4>
-              <h5>March 2024 - July 2024 </h5>
-              <p><em> (Onsite)</em></p>
+              <h4>NXG Infosystem Pvt. Ltd., Indore</h4>
+              <h5>Mar 2024 – Jul 2024</h5>
+              <p><em>PHP Developer (Onsite)</em></p>
               <ul>
-                <li>Develope and add new key features to the Company’s maintenance Product ‘LOS (Loan Officer Support)’ on core PHP.</li>
+                <li>Resolved production issues and optimized heavy SQL queries.</li>
+                <li>Improved backend workflows for the Loan Officer Support (LOS) system.</li>
               </ul>
-            </div><!-- Edn Resume Item -->
+            </div><!-- End Resume Item -->
             
             <div class="resume-item">
-              <h4>TechSimba Software Pvt. Ltd., Indore </h4>
-              <h5>March 2024 - July 2024 </h5>
-              <p><em> (Onsite)</em></p>
+              <h4>TechSimba Software Pvt. Ltd., Indore</h4>
+              <h5>Mar 2023 – Mar 2024</h5>
+              <p><em>PHP Developer (Hybrid)</em></p>
               <ul>
-                <li>Develope and maintain Company’s Product ‘One 2 One Scheduler’.</li>
-                <li>Update the Company’s Product ‘One 2 One Scheduler’ logics from core PHP to CodeIgniter4.</li>
+                <li>Migrated "One 2 One Scheduler" from Core PHP to CodeIgniter 4 and re-engineered scheduling logic.</li>
+                <li>Enhanced workflow management and system performance.</li>
               </ul>
-            </div><!-- Edn Resume Item -->
+            </div><!-- End Resume Item -->
 
           </div>
 
@@ -612,7 +613,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Portfolio</h2>
-        <p>Showcasing My Work — Projects That Demonstrate Technical Excellence and Innovation</p>
+        <p>Showcasing My Work — Projects That Demonstrate Technical Excellence and Innovation in PHP, Laravel, CodeIgniter, Python, CRM, ERP, and eCommerce Development</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -621,20 +622,21 @@
       <!-- Portfolio Item -->
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
         <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
-          <img src="assets/img/client-logo/zealdash_logo.png" 
-              class="img-fluid mb-3 mx-auto d-block" 
-              style="height: 180px; object-fit: contain;" 
-              alt="ZealDash">
-              
+          <div class="portfolio-logo-wrapper">
+            <img src="assets/img/client-logo/zealdash_logo.png" 
+                class="img-fluid portfolio-logo" 
+                alt="ZealDash CRM Platform - Built by Mohit Devang">
+          </div>
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">ZealDash</h4>
             <p class="small">
               ZealDash is a modern CRM and business management platform designed to streamline sales, customer engagement, task tracking, and workflow automation for growing businesses.
             </p>
             <a href="https://www.zealdash.com/" 
-              title="More Details" 
+              title="View ZealDash CRM Platform" 
               class="details-link fs-5" 
-              target="_blank">
+              target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-eye"></i>
             </a>
           </div>
@@ -644,13 +646,15 @@
       <!-- Portfolio Item -->
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
         <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
-          <img src="assets/img/client-logo/q8basket.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="Q8Basket">
+          <div class="portfolio-logo-wrapper">
+            <img src="assets/img/client-logo/q8basket.png" class="img-fluid portfolio-logo" alt="Q8Basket E-Commerce Platform - Developed by Mohit Devang">
+          </div>
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">Q8Basket</h4>
             <p class="small">
               Q8Basket is an online grocery and essentials delivery platform offering a wide range of fresh produce, household items, and daily needs with fast, reliable doorstep delivery.
             </p>
-            <a href="https://q8basket.com" title="More Details" class="details-link fs-5" target="_blank">
+            <a href="https://q8basket.com" title="View Q8Basket E-Commerce Platform" class="details-link fs-5" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-eye"></i>
             </a>
           </div>
@@ -660,11 +664,13 @@
       <!-- Portfolio Item -->
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
         <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
-          <img src="assets/img/client-logo/mtg.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
+          <div class="portfolio-logo-wrapper">
+            <img src="assets/img/client-logo/mtg.png" class="img-fluid portfolio-logo" alt="MTG Global Travel Services - Travel Booking System by Mohit Devang">
+          </div>
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">MTG Global Travel Services</h4>
             <p class="small">MTG is a comprehensive travel solutions provider offering tailored domestic and international travel services, including flights, hotels, visas, cab and holiday packages for individuals and corporate clients.</p>
-            <a href="https://ctbs-backend.zolute.xyz" title="More Details" class="details-link fs-5" target="_blank"><i class="bi bi-eye"></i></a>
+            <a href="https://ctbs-backend.zolute.xyz" title="View MTG Travel Booking System" class="details-link fs-5" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i></a>
           </div>
         </div>
       </div>
@@ -673,40 +679,48 @@
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
         <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
-          <img src="assets/img/client-logo/Trade-Co-3.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
+          <div class="portfolio-logo-wrapper">
+            <img src="assets/img/client-logo/Trade-Co-3.png" class="img-fluid portfolio-logo" alt="TradeCo E-Commerce Platform - MLM System by Mohit Devang">
+          </div>
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">TradeCo</h4>
             <p class="small">TradeCo is a networking-driven e-commerce platform that connects businesses and buyers, enabling seamless trade, collaboration, and growth through a unified online marketplace.</p>
-            <a href="https://mlm.zolute.xyz/admin/" title="More Details" class="details-link text-primary fs-5" target="_blank"><i class="bi bi-eye"></i></a>
+            <a href="https://mlm.zolute.xyz/admin/" title="View TradeCo MLM Platform" class="details-link text-primary fs-5" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i></a>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
         <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
-          <img src="assets/img/client-logo/Jordan-logo.jpg" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
+          <div class="portfolio-logo-wrapper">
+            <img src="assets/img/client-logo/Jordan-logo.jpg" class="img-fluid portfolio-logo" alt="Jordan Currency Exchange Platform - Developed by Mohit Devang">
+          </div>
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">Jordan Currency</h4>
             <p class="small">Jordan Currency is a currency exchange service in Thailand, offering reliable and competitive exchange rates for Jordanian Dinar and other major currencies, ensuring fast and secure transactions for travelers and businesses.</p>
-            <a href="https://accounts.jordancurrency.co.th" title="More Details" class="details-link text-primary fs-5" target="_blank"><i class="bi bi-eye"></i></a>
+            <a href="https://accounts.jordancurrency.co.th" title="View Jordan Currency Exchange Platform" class="details-link text-primary fs-5" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i></a>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
         <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
-          <img src="assets/img/client-logo/zolute_group.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
+          <div class="portfolio-logo-wrapper">
+            <img src="assets/img/client-logo/zolute_group.png" class="img-fluid portfolio-logo" alt="Zolute Technology & Consulting - Portfolio by Mohit Devang">
+          </div>
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">Zolute Consulting</h4>
             <p class="small">Zolute Consulting is an IT consulting firm providing tailored technology solutions, digital strategy, and expert guidance to help businesses innovate, scale, and succeed in the digital landscape.</p>
-            <a href="https://www.zolute.consulting/" title="More Details" class="details-link text-primary fs-5" target="_blank"><i class="bi bi-eye"></i></a>
+            <a href="https://www.zolute.consulting/" title="View Zolute Consulting Platform" class="details-link text-primary fs-5" target="_blank" rel="noopener noreferrer"><i class="bi bi-eye"></i></a>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
         <div class="h-100 d-flex flex-column border rounded p-3 portfolio-card-inner">
-          <img src="assets/img/client-logo/InfiLogo-new.png" class="img-fluid mb-3 mx-auto d-block" style="height: 180px; object-fit: contain;" alt="">
+          <div class="portfolio-logo-wrapper">
+            <img src="assets/img/client-logo/InfiLogo-new.png" class="img-fluid portfolio-logo" alt="InfiWealth Share Market Portal - Developed by Mohit Devang">
+          </div>
           <div class="portfolio-info mt-auto">
             <h4 class="h6 fw-bold">InfiAlgo</h4>
             <p class="small">InfiAlgo is an AI-based algorithmic trading platform designed to automate and optimize trading strategies, delivering faster, smarter, and data-driven decisions in the financial markets.</p>
@@ -878,6 +892,114 @@
     </section>
 
     <!-- /Services Section -->
+
+    <!-- Products & SaaS Solutions Section -->
+    <section id="products" class="products section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Products & SaaS Solutions</h2>
+        <p>Scalable SaaS platforms built to help businesses and institutions grow.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row g-4">
+          
+          <!-- Product Card 1 - LeadForge -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card product-leadforge">
+              <div class="product-card-header">
+                <div class="product-icon">
+                  <img src="assets/img/products-logo/lead_forge_logo.png" alt="LeadForge" class="product-logo">
+                </div>
+                <div class="product-badges">
+                  <span class="badge badge-saas">SaaS Platform</span>
+                  <span class="badge badge-enterprise">Enterprise License</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <h3 class="product-title">LeadForge</h3>
+                <p class="product-subtitle">CRM & Sales Management Platform</p>
+                <p class="product-description">LeadForge is a powerful CRM platform designed to help businesses manage leads, customers, and sales pipelines efficiently from a single dashboard.</p>
+                <ul class="product-features">
+                  <li><i class="bi bi-check-circle"></i> Lead & Customer Management</li>
+                  <li><i class="bi bi-check-circle"></i> Sales Pipeline Tracking</li>
+                  <li><i class="bi bi-check-circle"></i> Tasks, Follow-ups & Reminders</li>
+                  <li><i class="bi bi-check-circle"></i> Reports & Analytics</li>
+                  <li><i class="bi bi-check-circle"></i> API & Third-party Integrations</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <p class="product-custom-note"><i class="bi bi-info-circle"></i> All custom modification available</p>
+                <button class="btn-product btn-demo" onclick="openDemoModal('LeadForge')" id="demo-btn-leadforge">Request Demo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 2 - ShopEase -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-card product-shopease">
+              <div class="product-card-header">
+                <div class="product-icon">
+                  <img src="assets/img/products-logo/shop_ease_logo.png" alt="ShopEase" class="product-logo">
+                </div>
+                <div class="product-badges">
+                  <span class="badge badge-saas">SaaS</span>
+                  <span class="badge badge-whitelabel">White-Label</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <h3 class="product-title">ShopEase</h3>
+                <p class="product-subtitle">E-Commerce & Marketplace Platform</p>
+                <p class="product-description">ShopEase is a ready-to-launch e-commerce and marketplace platform that enables businesses to sell products online with complete control over orders, inventory, and payments.</p>
+                <ul class="product-features">
+                  <li><i class="bi bi-check-circle"></i> Single & Multi-Vendor Support</li>
+                  <li><i class="bi bi-check-circle"></i> Product & Inventory Management</li>
+                  <li><i class="bi bi-check-circle"></i> Order & Payment Processing</li>
+                  <li><i class="bi bi-check-circle"></i> Vendor Commission Management</li>
+                  <li><i class="bi bi-check-circle"></i> Mobile-Responsive Storefront</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <p class="product-custom-note"><i class="bi bi-info-circle"></i> All custom modification available</p>
+                <button class="btn-product btn-demo" onclick="openDemoModal('ShopEase')" id="demo-btn-shopease">Request Demo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Card 3 - EduEase -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card product-eduease">
+              <div class="product-card-header">
+                <div class="product-icon">
+                  <img src="assets/img/products-logo/edu_ease_logo.png" alt="EduEase" class="product-logo">
+                </div>
+                <div class="product-badges">
+                  <span class="badge badge-coming-soon">Coming Soon</span>
+                  <span class="badge badge-erp">SaaS ERP</span>
+                </div>
+              </div>
+              <div class="product-card-body">
+                <h3 class="product-title">EduEase</h3>
+                <p class="product-subtitle">School & College ERP Platform</p>
+                <p class="product-description">EduEase is an all-in-one school and college ERP system designed to simplify academic, administrative, and financial operations for educational institutions.</p>
+                <ul class="product-features">
+                  <li><i class="bi bi-check-circle"></i> Student & Staff Management</li>
+                  <li><i class="bi bi-check-circle"></i> Attendance & Timetable</li>
+                  <li><i class="bi bi-check-circle"></i> Fees & Exams</li>
+                  <li><i class="bi bi-check-circle"></i> Parent & Student Portal</li>
+                  <li><i class="bi bi-check-circle"></i> Reports & Analytics</li>
+                </ul>
+              </div>
+              <div class="product-card-footer">
+                <p class="product-custom-note"><i class="bi bi-info-circle"></i> All custom modification available</p>
+                <button class="btn-product btn-demo" onclick="openDemoModal('EduEase')" id="demo-btn-eduease">Notify Me</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Products & SaaS Solutions Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section d-none">
@@ -1347,6 +1469,283 @@
             if (submitBtn) submitBtn.disabled = false;
           }
         });
+      });
+    });
+  </script>
+
+  <!-- Demo Form Handler Script -->
+  <script>
+    // Demo Form Handler with Subject Prefix Protection
+    document.addEventListener('DOMContentLoaded', function() {
+      const demoForm = document.getElementById('demo-form');
+      if (!demoForm) return;
+
+      const subjectField = document.getElementById('demo-subject');
+      
+      // Protect subject prefix
+      if (subjectField) {
+        subjectField.addEventListener('input', function() {
+          const prefix = this.getAttribute('data-prefix');
+          if (prefix && !this.value.startsWith(prefix)) {
+            this.value = prefix;
+            this.setSelectionRange(prefix.length, prefix.length);
+          }
+        });
+
+        subjectField.addEventListener('keydown', function(e) {
+          const prefix = this.getAttribute('data-prefix');
+          if (prefix) {
+            const cursorPos = this.selectionStart;
+            if (cursorPos < prefix.length) {
+              if (e.key === 'Backspace' || e.key === 'Delete') {
+                e.preventDefault();
+              } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
+                e.preventDefault();
+                const currentValue = this.value;
+                const newValue = prefix + e.key;
+                this.value = newValue;
+                this.setSelectionRange(newValue.length, newValue.length);
+              }
+            }
+          }
+        });
+
+        subjectField.addEventListener('paste', function(e) {
+          e.preventDefault();
+          const prefix = this.getAttribute('data-prefix');
+          const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+          this.value = prefix + pastedText;
+          this.setSelectionRange(this.value.length, this.value.length);
+        });
+      }
+
+      // Demo form submission
+      demoForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const loading = document.getElementById('demo-loading');
+        const errorBox = document.getElementById('demo-error');
+        const successBox = document.getElementById('demo-success');
+        const submitBtn = document.getElementById('demo-submit-btn');
+        const productName = document.getElementById('demo-product-field').value;
+
+        if (loading) loading.style.display = 'block';
+        if (errorBox) { errorBox.style.display = 'none'; errorBox.textContent = ''; }
+        if (successBox) successBox.style.display = 'none';
+
+        const nameEl = document.getElementById('demo-name');
+        const emailEl = document.getElementById('demo-email');
+        const phoneEl = document.getElementById('demo-phone');
+        const subjectEl = document.getElementById('demo-subject');
+        const messageEl = document.getElementById('demo-message');
+
+        // Clear previous errors - use existing functions from global scope
+        [nameEl, emailEl, phoneEl, subjectEl, messageEl].forEach(el => {
+          if (el && typeof clearError === 'function') {
+            clearError(el);
+          } else if (el) {
+            el.style.borderColor = '';
+            const err = el.nextElementSibling;
+            if (err && err.classList.contains('error-text')) {
+              err.textContent = '';
+              err.style.display = 'none';
+            }
+          }
+        });
+
+        // Helper functions for demo form
+        function showDemoError(el, msg) {
+          if (!el) return;
+          el.style.borderColor = '#ff4444';
+          const err = el.nextElementSibling;
+          if (err && err.classList.contains('error-text')) {
+            err.textContent = msg;
+            err.style.display = 'block';
+          }
+        }
+
+        function isValidDemoEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) return false;
+          const domain = email.split('@')[1]?.toLowerCase();
+          if (!domain) return false;
+          const tempEmailDomains = [
+            'tempmail.com','10minutemail.com','guerrillamail.com','mailinator.com',
+            'throwaway.email','temp-mail.org','getnada.com','mohmal.com',
+            'yopmail.com','sharklasers.com','trashmail.com','fakeinbox.com',
+            'dispostable.com','mintemail.com','emailondeck.com','mytrashmail.com'
+          ];
+          return !tempEmailDomains.some(temp => {
+            return domain === temp || domain.endsWith('.' + temp);
+          });
+        }
+
+        function isValidDemoPhone(phone) {
+          const cleaned = phone.replace(/\s+/g, '');
+          return /^\+?[0-9]{8,18}$/.test(cleaned);
+        }
+
+        // Validation
+        let valid = true;
+        if (!nameEl.value.trim() || nameEl.value.trim().length < 2) {
+          showDemoError(nameEl, 'Please enter your name (min 2 chars)');
+          valid = false;
+        }
+        if (!emailEl.value.trim() || !isValidDemoEmail(emailEl.value.trim())) {
+          if (!emailEl.value.trim()) {
+            showDemoError(emailEl, 'Please enter your email address');
+          } else {
+            showDemoError(emailEl, 'Please enter a valid email address (format: name@domain.com)');
+          }
+          valid = false;
+        }
+        if (!phoneEl.value.trim() || !isValidDemoPhone(phoneEl.value.trim())) {
+          showDemoError(phoneEl, 'Please enter phone with country code (e.g. +91 9876543210)');
+          valid = false;
+        }
+        if (!subjectEl.value.trim() || subjectEl.value.trim().length < 10) {
+          showError(subjectEl, 'Please complete the subject field');
+          valid = false;
+        }
+
+        if (!valid) {
+          if (loading) loading.style.display = 'none';
+          if (submitBtn) submitBtn.disabled = false;
+          return;
+        }
+
+        // Check localStorage for this product
+        const submitKey = `demoSubmitted_${productName}`;
+        const submitted = localStorage.getItem(submitKey);
+        if (submitted) {
+          const submitDate = new Date(submitted);
+          const now = new Date();
+          const daysDiff = Math.floor((now - submitDate) / (1000 * 60 * 60 * 24));
+          
+          if (daysDiff < 30) {
+            if (errorBox) {
+              errorBox.textContent = `You already requested a demo for ${productName} this month. Please wait ${30 - daysDiff} more days.`;
+              errorBox.style.display = 'block';
+            }
+            if (loading) loading.style.display = 'none';
+            if (submitBtn) submitBtn.disabled = false;
+            return;
+          }
+        }
+
+        if (submitBtn) submitBtn.disabled = true;
+
+        const data = new FormData();
+        data.append('name', nameEl.value.trim());
+        data.append('email', emailEl.value.trim());
+        data.append('phone', phoneEl.value.trim());
+        data.append('subject', subjectEl.value.trim());
+        data.append('message', messageEl.value.trim() || 'Demo request for ' + productName);
+        data.append('product', productName);
+
+        try {
+          const response = await fetch(demoForm.action, {
+            method: demoForm.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (loading) loading.style.display = 'none';
+
+          if (response.ok) {
+            if (successBox) {
+              successBox.textContent = 'Thanks for your submission! We will contact you soon.';
+              successBox.style.display = 'block';
+            }
+            
+            // Store submission in localStorage with product name
+            localStorage.setItem(submitKey, new Date().toISOString());
+            
+            // Disable button for this product
+            const productBtn = document.getElementById(`demo-btn-${productName.toLowerCase()}`);
+            if (productBtn) {
+              productBtn.disabled = true;
+              productBtn.textContent = 'Already Submitted (Once per month)';
+              productBtn.style.opacity = '0.6';
+              productBtn.style.cursor = 'not-allowed';
+            }
+            
+            demoForm.reset();
+            const prefix = subjectEl.getAttribute('data-prefix');
+            if (prefix) {
+              subjectEl.value = prefix;
+            }
+            
+            // Close modal after 2 seconds
+            setTimeout(() => {
+              closeDemoModal();
+            }, 2000);
+          } else {
+            let errorMsg = 'Oops! There was a problem submitting your form';
+            try {
+              const resData = await response.json();
+              if (resData.errors && Array.isArray(resData.errors)) {
+                errorMsg = resData.errors.map(e => e.message || e).join(', ');
+              } else if (resData.error) {
+                errorMsg = resData.error;
+              } else if (typeof resData === 'string') {
+                errorMsg = resData;
+              } else if (resData.message) {
+                errorMsg = resData.message;
+              }
+            } catch (e) {
+              // Use default message
+            }
+            
+            if (errorBox) {
+              errorBox.textContent = errorMsg;
+              errorBox.style.display = 'block';
+            }
+            if (submitBtn) submitBtn.disabled = false;
+          }
+        } catch (err) {
+          if (loading) loading.style.display = 'none';
+          if (errorBox) {
+            errorBox.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+            errorBox.style.display = 'block';
+          }
+          if (submitBtn) submitBtn.disabled = false;
+        }
+      });
+
+      // Close demo modal on outside click
+      const demoModal = document.getElementById('demoModal');
+      if (demoModal) {
+        demoModal.addEventListener('click', function(event) {
+          if (event.target === demoModal) {
+            closeDemoModal();
+          }
+        });
+      }
+
+      // Check and disable buttons on page load
+      const products = ['leadforge', 'shopease', 'eduease'];
+      products.forEach(product => {
+        const productName = product.charAt(0).toUpperCase() + product.slice(1);
+        const submitKey = `demoSubmitted_${productName}`;
+        const submitted = localStorage.getItem(submitKey);
+        if (submitted) {
+          const submitDate = new Date(submitted);
+          const now = new Date();
+          const daysDiff = Math.floor((now - submitDate) / (1000 * 60 * 60 * 24));
+          
+          if (daysDiff < 30) {
+            const productBtn = document.getElementById(`demo-btn-${product}`);
+            if (productBtn) {
+              productBtn.disabled = true;
+              productBtn.textContent = 'Already Submitted (Once per month)';
+              productBtn.style.opacity = '0.6';
+              productBtn.style.cursor = 'not-allowed';
+            }
+          } else {
+            // More than 30 days, allow resubmission
+            localStorage.removeItem(submitKey);
+          }
+        }
       });
     });
   </script>
